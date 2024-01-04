@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Photography Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+ 
+    <div id="toggle-toc">&#9776;</div>
+
+    <nav id="table-of-contents">
+        <ul>
+            <li><a href="#nyc">NYC 2023</a></li>
+            <li><a href="#seoul">Seoul</a></li>
+            <li><a href="#friends">Friends</a></li>
+        </ul>
+    </nav>
+    
+    <header>
+        <h1>Hyeseung Kim</h1>
+        <p>@hk.123100</p>
+    </header>
+
+    <section id="nyc" class="submenu">
+        <!-- Content for NYC 2023 goes here -->
+        <h2>NYC 2023</h2>
+        <p>Your content for NYC 2023.</p>
+    </section>
+
+    <section id="seoul" class="submenu">
+        <!-- Content for Seoul goes here -->
+        <h2>Seoul</h2>
+        <p>Your content for Seoul.</p>
+    </section>
+
+    <section id="friends" class="submenu">
+        <!-- Content for Friends goes here -->
+        <h2>Friends</h2>
+        <p>Your content for Friends.</p>
+    </section>
+
+    <section class="hero">
+        <h2>Capturing Moments</h2>
+        <p>Explore the beauty through my lens</p>
+    </section>
+
+    <section class="gallery">
+        <!-- Add your photo gallery items here -->
+        <div class="photo">
+            <img src="images/photo1.jpg" alt="Photo 1">
+        </div>
+        <div class="photo">
+            <img src="images/photo2.jpg" alt="Photo 2">
+        </div>
+        <!-- Add more photos as needed -->
+    </section>
+
+    <section class="contact">
+        <h2>Contact Me</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var toggleButton = document.getElementById('toggle-toc');
+            var toc = document.getElementById('table-of-contents');
+            var submenus = document.querySelectorAll('.submenu');
+    
+            toggleButton.addEventListener('click', function () {
+                toc.classList.toggle('visible');
+            });
+    
+            submenus.forEach(function (submenu) {
+                submenu.addEventListener('click', function () {
+                    submenu.classList.toggle('visible');
+                });
+            });
+    
+            // Close TOC on another click outside the TOC and toggle button
+            document.addEventListener('click', function (event) {
+                if (!toc.contains(event.target) && event.target !== toggleButton) {
+                    toc.classList.remove('visible');
+                }
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>
